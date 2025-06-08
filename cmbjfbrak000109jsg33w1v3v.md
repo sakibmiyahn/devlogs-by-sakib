@@ -22,10 +22,10 @@ Let’s start with a high-level view of what each tool brings to the table.
 | --- | --- |
 | [**Prettier**](https://prettier.io/docs/) | Automatically formats code to a consistent style across file types. |
 | [**ESLint**](https://eslint.org/docs/latest/) | Detects syntax errors and enforces coding best practices in JS/TS code. |
-| [**Airbnb Config**](https://github.com/airbnb/javascript) | A widely-adopted ESLint config that enforces readable, consistent JS code. |
+| [**Airbnb Config**](https://github.com/airbnb/javascript) | A widely adopted ESLint config that enforces readable, consistent JS code. |
 | [**Stylelint**](https://stylelint.io/) | Linter for CSS/SCSS that catches errors and enforces style conventions. |
 | [**lint-staged**](https://github.com/lint-staged/lint-staged#readme) | Ensures linters only run on staged files — fast and targeted. |
-| [**Husky**](https://typicode.github.io/husky/) | Hooks into Git to run checks before code is committed — keeping your main branch clean. |
+| [**Husky**](https://typicode.github.io/husky/) | Hooks into Git to run checks before code is committed, keeping your main branch clean. |
 
 When combined, these tools reduce the surface area for bugs, reduce friction in code reviews and let you focus on solving real problems — not arguing about trailing commas.
 
@@ -39,7 +39,7 @@ Prettier is an opinionated formatter. It doesn’t care how you want your code t
 npm install --save-dev prettier
 ```
 
-Create a `.prettierrc` file at the root of your project. You can modify these settings as per your preferences. Check [Prettier](https://prettier.io/docs/) docs for all available options. Here's a sample configuration I use:
+Create a `.prettierrc` file at the root of your project. You can modify these settings as per your preferences. Refer to the [Prettier](https://prettier.io/docs/) documentation for all available options. Here's a sample configuration I use:
 
 ```json
 {
@@ -90,7 +90,7 @@ npx install-peerdeps --dev eslint-config-airbnb-base
 
 > Note: Use `eslint-config-airbnb` instead of `airbnb-base` if you’re working with React.
 
-Create an `.eslintrc.json` file at the root of your project. Here's a sample configuration which uses the Airbnb base rules (which exclude React-specific rules). It also adds Prettier and node config as a rule. Checkout [ESLint](https://eslint.org/docs/latest/) docs for full sets of available rules:
+Create an `.eslintrc.json` file at the root of your project. Here's a sample configuration that uses the Airbnb base rules (which exclude React-specific rules). It also adds Prettier and node config as a rule. Check out [ESLint](https://eslint.org/docs/latest/) docs for full sets of available rules:
 
 ```json
 {
@@ -115,7 +115,7 @@ Create an `.eslintrc.json` file at the root of your project. Here's a sample con
 
 * `prettier/prettier` - ESLint surfaces Prettier issues, but only as warnings.
     
-* `no-console` - Logs are useful during development but shouldn’t ship to prod.
+* `no-console` - Logs are useful during development, but shouldn’t ship to prod.
     
 * `no-unused-vars` - Helps avoid bloated, misleading code.
     
@@ -132,7 +132,7 @@ Stylelint works just like ESLint, but for styles. It ensures your SCSS/CSS is co
 npm install --save-dev sass stylelint stylelint-config-standard-scss stylelint-config-prettier
 ```
 
-Create `.stylelintrc.json` in project root. Here's a sample configuration:
+Create `.stylelintrc.json` in the project root. Here's a sample configuration:
 
 ```json
 {
@@ -176,7 +176,7 @@ lint-staged will run specific commands on staged files before committing them. A
 
 ## **🔐 Step 5: Husky — Git Gatekeeper**
 
-[Husky](https://typicode.github.io/husky/) allows us to run scripts at key Git lifecycle moments. Here, we’ll use it to run lint-staged before any commit. Thus code only ever gets into the repo after it has been consistently formatted and verified to be free of linting errors. This a particularly big advantage in a team setting.
+[Husky](https://typicode.github.io/husky/) allows us to run scripts at key Git lifecycle moments. Here, we’ll use it to run lint-staged before any commit. Thus code only ever gets into the repo after it has been consistently formatted and verified to be free of linting errors. This is a particularly big advantage in a team setting.
 
 ### **🔧 Install and set up**
 
@@ -234,10 +234,10 @@ Add these to your `package.json` for manual use or CI pipelines, adjust accordin
     
 * `style:check` - This will check if all the specified CSS, SCSS files adhere to the formatting rules specified by Stylelint. Only add for front-end projects.
     
-* `prepare` - This will only run Husky in non-production environment.
+* `prepare` - This will only run Husky in a non-production environment.
     
 
-You can, adjust the patterns like `./**/*.@(js|jsx|ts|tsx|json|css|scss|md)` to fit the specific needs of your project and which directories or file types you want to include/exclude.
+You can adjust the patterns like `./**/*.@(js|jsx|ts|tsx|json|css|scss|md)` to fit the specific needs of your project, and which directories or file types you want to include/exclude.
 
 ### ⚙️ Using in your Workflow
 
@@ -262,7 +262,7 @@ To make all of this seamless, configure VS Code to format on save and use the fo
 * [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
     
 
-Put the following in `.vscode/settings.json` in the project (you can of also put these settings in you User Preferences file):
+Put the following in `.vscode/settings.json` in the project (you can also put these settings in your User Preferences file):
 
 ```json
 {
@@ -292,7 +292,7 @@ Put the following in `.vscode/settings.json` in the project (you can of also put
 
 ## ✅ Final Thoughts
 
-This setup may feel like a lot up front — but once it’s in place, it quietly handles all the repetitive formatting, catches subtle issues and keeps your Git history clean.
+This setup may feel like a lot up front, but once it’s in place, it quietly handles all the repetitive formatting, catches subtle issues and keeps your Git history clean.
 
 It’s not about obsessing over code style. It’s about freeing up mental bandwidth so you can focus on solving real problems, not arguing over trailing commas or indentation.
 
