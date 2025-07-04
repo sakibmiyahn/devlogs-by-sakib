@@ -17,4 +17,4 @@ Each file in this repo represents an individual blog post in Markdown format (`.
 ## 📚 Blog
 
 Original posts at:  
-➡️ **[blog.mrsakib.com](https://blog.sakibmiyahn.com)**
+➡️ **[blog.sakibmiyahn.com](https://blog.sakibmiyahn.com)**
